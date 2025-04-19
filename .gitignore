@@ -1,36 +1,71 @@
 # Ignorar node_modules en la carpeta frontend
 frontend/node_modules/
 
-# Dependencies
-/.pnp
-.pnp.js
+# Archivos específicos de Node.js
+frontend/package-lock.json
+frontend/yarn.lock
 
-# Testing
-/coverage
+# Ignorar archivos de dependencias de Node.js
+frontend/.pnp
+frontend.pnp.js
 
-# Production
-/build
+# Archivos de entorno específicos de Django (backend)
+backend/.env.local
+backend/.env.development.local
+backend/.env.test.local
+backend/.env.production.local
 
-# Miscellaneous
-.DS_Store
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+# Archivos de base de datos (backend)
+backend/*.db
+backend/db.sqlite3
 
-# Logs
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+# Archivos de Python y bytecode (backend)
+backend/*.pyc
+backend/*.pyo
+backend/__pycache__
 
-# Backend files
-*.db
-db.sqlite3
+# Migraciones de Django (backend)
+backend/**/migrations/*.pyc
+backend/**/migrations/__init__.py
 
-# Python bytecode
-*.pyc
-*.pyo
-__pycache__
+# Archivos de testing (backend y frontend)
+backend/coverage/
+frontend/coverage/
 
-# Django migrations
-*/migrations/*
+# Archivos de producción (frontend y backend)
+frontend/build/
+backend/build/
+
+# Archivos de configuración de Docker
+frontend/Dockerfile-frontend
+backend/Dockerfile-backend
+
+# Archivos de logs
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+backend/npm-debug.log*
+backend/yarn-debug.log*
+backend/yarn-error.log*
+
+# Archivos específicos de sistema (Mac OS)
+frontend/.DS_Store
+backend/.DS_Store
+
+# Archivos de configuración específicos de editor (VS Code)
+frontend/.vscode/
+backend/.vscode/
+
+# Archivos de documentación
+backend/api_documentation.md
+frontend/api_documentation.md
+
+# Ignorar carpetas de migraciones en backend
+backend/**/migrations/
+
+# Ignorar los archivos de cache de frontend (build) 
+frontend/.next/
+
+# Otros archivos no relevantes
+frontend/.eslintcache
+
