@@ -1,5 +1,5 @@
-# Node modules
-/node_modules
+# Ignorar node_modules en la carpeta frontend
+frontend/node_modules/
 
 # Dependencies
 /.pnp

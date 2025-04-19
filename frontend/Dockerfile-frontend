@@ -1,0 +1,22 @@
+# Dockerfile-frontend
+
+# Usa la imagen base
+FROM node:16
+
+# Crea el directorio de trabajo
+WORKDIR /app
+
+# Copia los package.json desde el contexto (ya está en ./frontend)
+COPY package*.json /app/
+
+# Instala dependencias
+RUN npm install
+
+# Copia el resto de archivos
+COPY . /app
+
+# Expone el puerto
+EXPOSE 3000
+
+# Comando por defecto
+CMD ["npm", "start"]

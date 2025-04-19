@@ -1,0 +1,76 @@
+/* Contenedor del formulario */
+.edit-book-container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 40px;
+  background-color: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 0 24px rgba(0, 0, 0, 0.1);
+}
+
+.edit-book-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Etiquetas y campos de texto */
+.edit-book-form label {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.edit-book-form input {
+  padding: 0.8rem;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  margin-top: 0.5rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.edit-book-form input:focus {
+  outline: none;
+  border-color: #4caf50;
+}
+
+/* Estilos de los botones */
+.edit-book-form .btn-save {
+  background-color: #4caf50;
+  color: white;
+  padding: 0.7rem;
+  margin-top: 1rem;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+}
+
+.edit-book-form .btn-save:hover {
+  background-color: #45a049;
+}
+
+.edit-book-form .btn-cancel {
+  background-color: #f44336;
+  color: white;
+  padding: 0.7rem;
+  margin-top: 1rem;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+}
+
+.edit-book-form .btn-cancel:hover {
+  background-color: #e53935;
+}
+
+/* Estilo de mensajes de error */
+.error {
+  color: red;
+  font-weight: bold;
+  margin-top: 10px;
+}
