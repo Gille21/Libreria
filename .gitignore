@@ -69,3 +69,4 @@ frontend/.next/
 # Otros archivos no relevantes
 frontend/.eslintcache
 
+.qodo

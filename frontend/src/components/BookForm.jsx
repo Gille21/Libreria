@@ -97,27 +97,77 @@ const BookForm = () => {
     <div className="form-container">
       <h2>{isEditMode ? 'Editar Libro' : 'Agregar Nuevo Libro'}</h2>
       <form onSubmit={handleSubmit}>
-        {['Título', 'Autor', 'Año de Publicación', 'ISBN (International Standard Book Number)', 'Copias disponibles'].map((field) => (
-          <div key={field} className="form-group mb-3">
-            <label htmlFor={field} className="form-label">
-              {field.replace('_', ' ').toUpperCase()}
-            </label>
-            <input
-              id={field}
-              type={field === 'Año de Publicación' || field === 'Copias disponibles' ? 'number' : 'text'}
-              name={field}
-              value={formData[field]}
-              onChange={handleChange}
-              className={`form-control ${errors[field] ? 'is-invalid' : ''}`}
-            />
-            {errors[field] && <div className="invalid-feedback">{errors[field]}</div>}
-          </div>
-        ))}
+        <div className="form-group mb-3">
+          <label htmlFor="title" className="form-label">Título</label>
+          <input
+            id="title"
+            name="title"
+            type="text"
+            value={formData.title}
+            onChange={handleChange}
+            className={`form-control ${errors.title ? 'is-invalid' : ''}`}
+          />
+          {errors.title && <div className="invalid-feedback">{errors.title}</div>}
+        </div>
+
+        <div className="form-group mb-3">
+          <label htmlFor="author" className="form-label">Autor</label>
+          <input
+            id="author"
+            name="author"
+            type="text"
+            value={formData.author}
+            onChange={handleChange}
+            className={`form-control ${errors.author ? 'is-invalid' : ''}`}
+          />
+          {errors.author && <div className="invalid-feedback">{errors.author}</div>}
+        </div>
+
+        <div className="form-group mb-3">
+          <label htmlFor="publication_year" className="form-label">Año de Publicación</label>
+          <input
+            id="publication_year"
+            name="publication_year"
+            type="number"
+            value={formData.publication_year}
+            onChange={handleChange}
+            className={`form-control ${errors.publication_year ? 'is-invalid' : ''}`}
+          />
+          {errors.publication_year && <div className="invalid-feedback">{errors.publication_year}</div>}
+        </div>
+
+        <div className="form-group mb-3">
+          <label htmlFor="isbn" className="form-label">ISBN (13 dígitos)</label>
+          <input
+            id="isbn"
+            name="isbn"
+            type="text"
+            value={formData.isbn}
+            onChange={handleChange}
+            className={`form-control ${errors.isbn ? 'is-invalid' : ''}`}
+          />
+          {errors.isbn && <div className="invalid-feedback">{errors.isbn}</div>}
+        </div>
+
+        <div className="form-group mb-3">
+          <label htmlFor="available_copies" className="form-label">Copias disponibles</label>
+          <input
+            id="available_copies"
+            name="available_copies"
+            type="number"
+            value={formData.available_copies}
+            onChange={handleChange}
+            className={`form-control ${errors.available_copies ? 'is-invalid' : ''}`}
+          />
+          {errors.available_copies && <div className="invalid-feedback">{errors.available_copies}</div>}
+        </div>
+
         <div className="d-flex justify-content-between mt-4">
-          <button type="submit" className="btn btn-primary d-flex align-items-center gap-2">
-            <i className="bi bi-save2-fill"></i> {isEditMode ? 'Actualizar' : 'Guardar'}
+          <button type="submit" className="btn btn-success d-flex align-items-center gap-2">
+            <i className={`bi ${isEditMode ? 'bi-pencil-square' : 'bi-plus-circle-fill'}`}></i>
+            {isEditMode ? 'Actualizar' : 'Guardar'}
           </button>
-          <button type="button" onClick={handleCancel} className="btn btn-secondary d-flex align-items-center gap-2">
+          <button type="button" onClick={handleCancel} className="btn btn-danger d-flex align-items-center gap-2">
             <i className="bi bi-x-circle-fill"></i> Cancelar
           </button>
         </div>
