@@ -50,5 +50,15 @@ services:
     environment:
       - CHOKIDAR_USEPOLLING=true
 
+  seed:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile-backend
+    volumes:
+      - ./backend:/app
+    depends_on:
+      - db
+    command: ["python", "books/seed_books.py"]  
+
 volumes:
   postgres_data:

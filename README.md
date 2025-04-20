@@ -1,4 +1,4 @@
-## Descripción
+## 1. Descripción
 
 Este sistema de gestión de biblioteca permite a los usuarios gestionar libros en una base de datos. Las funcionalidades incluyen la posibilidad de ver, agregar, editar y eliminar libros. Además, los usuarios pueden realizar búsquedas por título o autor, y filtrar los libros para mostrar solo aquellos que tienen copias disponibles.
 
@@ -6,7 +6,7 @@ El sistema está compuesto por un frontend desarrollado con React, un backend co
 
 El sistema está diseñado para ser simple, eficiente y fácil de usar, permitiendo una gestión completa de los libros en una biblioteca, tanto para administradores como para usuarios que necesiten consultar información sobre los libros disponibles.
 
-## Tecnologías Utilizadas
+## 2. Tecnologías Utilizadas
 
 El proyecto utiliza las siguientes tecnologías principales para su desarrollo:
 
@@ -30,25 +30,25 @@ Este stack tecnológico asegura un sistema flexible, escalable y fácil de despl
 
 
 
-## Requisitos Previos
+## 3. Requisitos Previos
 
 Para poder ejecutar y desarrollar este sistema de gestión de biblioteca, es necesario tener instalados los siguientes programas y herramientas:
 
-1. **Node.js**: 
+  **1. Node.js**: 
    - [Descargar Node.js](https://nodejs.org/) - Necesario para ejecutar el frontend de la aplicación.
    - Verifica la instalación de Node.js ejecutando el siguiente comando:
      ```bash
      node -v
      ```
 
-2. **Python 3.x**:
+  **2. Python 3.x**:
    - [Descargar Python](https://www.python.org/downloads/) - Requerido para el backend desarrollado con Django.
    - Verifica la instalación de Python ejecutando:
      ```bash
      python --version
      ```
 
-3. **Docker y Docker Compose**:
+  **3. Docker y Docker Compose**:
    - [Instalar Docker](https://docs.docker.com/get-docker/) - Docker es necesario para la containerización de la aplicación.
    - Verifica la instalación de Docker ejecutando:
      ```bash
@@ -60,11 +60,11 @@ Para poder ejecutar y desarrollar este sistema de gestión de biblioteca, es nec
      docker-compose --version
      ```
 
-4. **PostgreSQL** (opcional si se va a usar contenedor de Docker):
+  **4. PostgreSQL** (opcional si se va a usar contenedor de Docker):
    - Si decides no usar el contenedor de PostgreSQL de Docker, deberás tener PostgreSQL instalado localmente. 
    - [Descargar PostgreSQL](https://www.postgresql.org/download/)
 
-5. **Editor de código (opcional pero recomendado)**:
+  **5. Editor de código (opcional pero recomendado)**:
    - [Visual Studio Code](https://code.visualstudio.com/) o cualquier otro editor de código de tu preferencia para editar los archivos del proyecto.
    
 ---
@@ -72,9 +72,9 @@ Para poder ejecutar y desarrollar este sistema de gestión de biblioteca, es nec
 Una vez que tengas estas herramientas instaladas, podrás proceder a ejecutar y desarrollar el sistema de gestión de biblioteca en tu entorno local.
 
 
-### Descripción de las carpetas y archivos clave:
+## 4.Descripción de las carpetas y archivos clave:
 
-1. **`backend/`**:
+**1. `backend/`**:
    - Contiene todo el código del backend desarrollado con Django.
    - **`manage.py`**: Archivo para ejecutar comandos de Django, como `runserver` para iniciar el servidor.
    - **`library_api/`**: Carpeta donde se encuentra la configuración y lógica principal de Django.
@@ -84,7 +84,7 @@ Una vez que tengas estas herramientas instaladas, podrás proceder a ejecutar y 
    - **`requirements.txt`**: Listado de dependencias para instalar en el entorno de desarrollo Python.
    - **`Dockerfile`**: Archivo para crear la imagen Docker del backend.
 
-2. **`frontend/`**:
+**2. `frontend/`**:
    - Contiene el código del frontend desarrollado con React.
    - **`src/`**: Carpeta con los archivos fuente de React.
      - **`components/`**: Componentes clave de la aplicación, como el listado de libros y formularios de edición.
@@ -94,13 +94,13 @@ Una vez que tengas estas herramientas instaladas, podrás proceder a ejecutar y 
    - **`public/`**: Contiene el archivo HTML principal que carga la aplicación React.
    - **`Dockerfile`**: Archivo para crear la imagen Docker del frontend.
 
-3. **`docker-compose.yml`**:
+**3. `docker-compose.yml`**:
    - Archivo de configuración para levantar el stack completo de la aplicación (frontend, backend y PostgreSQL) mediante Docker.
 
 
 Esta es la estructura básica de cómo se organiza el proyecto. Puedes ir navegando por las carpetas y archivos según el componente que desees modificar o revisar.
 
-## Funcionalidades
+## 5. Funcionalidades
 
 El sistema de gestión de biblioteca incluye las siguientes funcionalidades principales:
 
@@ -154,7 +154,7 @@ El sistema de gestión de biblioteca incluye las siguientes funcionalidades prin
      - Estilo visual consistente y adaptado para dispositivos móviles.
      - Botones e íconos intuitivos para realizar acciones de edición y eliminación.
 
-# 6. Docker: Cómo levantar la aplicación usando Docker
+## 6. Docker: Cómo levantar la aplicación usando Docker
 
 Para facilitar la implementación y asegurar un entorno consistente, hemos utilizado Docker para contenerizar la aplicación. A continuación se detallan los pasos para levantar la aplicación utilizando Docker.
 
@@ -187,3 +187,27 @@ Para facilitar la implementación y asegurar un entorno consistente, hemos utili
 
 Este proceso asegura que la aplicación se ejecute en un entorno consistente y replicable, facilitando la configuración y el despliegue de la aplicación en cualquier sistema.
 
+## 7. Poblar la base de datos con libros de ejemplo
+
+Para poblar la base de datos con algunos libros de ejemplo, sigue los siguientes pasos. **Es importante que hayas levantado previamente los contenedores con Docker Compose antes de proceder.**
+
+### 1. **Levantar los contenedores**
+- **Descripción**: Primero debes asegurarte de que los servicios estén funcionando correctamente.
+- **Pasos**:
+  - Ejecuta el comando `docker-compose up --build` en la raíz del proyecto.
+  - Este comando descargará las imágenes necesarias, construirá los contenedores y levantará los servicios correspondientes.
+
+### 2. **Ejecutar el comando de Seed**
+- **Descripción**: Después de que los contenedores estén en funcionamiento, puedes poblar la base de datos con datos de ejemplo.
+- **Comando**: 
+  - Abre una nueva terminal y ejecuta el siguiente comando: `docker-compose run --rm seed`
+  - Este comando ejecutará el proceso de seed, creando libros de ejemplo en la base de datos.
+  - Verás en la terminal los libros que se han creado exitosamente.
+
+### 3. **Verificar los datos**
+- **Descripción**: Confirma que los datos se han cargado correctamente.
+- **Pasos**:
+  - Una vez que hayas ejecutado el proceso de seed, puedes acceder a la aplicación.
+  - Verifica en el listado si los libros de ejemplo se han agregado correctamente.
+
+Este proceso te permite tener datos iniciales en la aplicación para poder probar su funcionamiento sin necesidad de agregar manualmente cada libro.
