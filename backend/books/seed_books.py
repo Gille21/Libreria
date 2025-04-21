@@ -36,6 +36,7 @@ sample_books = [
     {"title": "El nombre de la rosa", "author": "Umberto Eco", "publication_year": 1980, "isbn": "9780156001311"},
 ]
 
+
 # Crear libros en la base de datos con copias disponibles aleatorias entre 0 y 10
 for data in sample_books:
     available_copies = random.randint(0, 10)
